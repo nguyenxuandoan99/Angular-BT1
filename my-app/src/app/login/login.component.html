@@ -1,12 +1,12 @@
 <div class="container">
   <div class="row">
-  <form class="form-login">
+  <form class="form-control-sm">
   <legend>Login Account</legend>
   <label>username</label><br>
-  <input type="text" name="username" [(ngModel)]= "username"><br>
+  <input class="form-control form-control-lg" type="text" name="username" [(ngModel)]= "username"><br>
   <label>password</label><br>
-  <input type="password" name="password" [(ngModel)]= "password"><br><br>
-  <button type="submit" (click) = "LoginUser()">Submit</button>
+  <input class="form-control form-control-lg" type="password" name="password" [(ngModel)]= "password"><br><br>
+  <button class="btn btn-outline-info" type="submit" (click) = "LoginUser()">Submit</button>
   </form>
 </div>
 </div>
