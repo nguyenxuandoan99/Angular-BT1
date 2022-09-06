@@ -1,0 +1,37 @@
+
+<div class="container">
+  <div>
+    <div class="row">
+      <app-search (searchtextChange)="searchProduct($event)"></app-search>
+    </div>
+  <!-- <form>
+  <div class="search">
+    <div class="isearch">
+    <label>Search Product</label>
+    <input class="form-control" type="text" name="searchText" [(ngModel)]= "searchText" >
+    </div>
+  </div>
+  </form>
+  <input class="form-control" name="searchTerm" [(ngModel)]="searchTerm" placeholder="seach name product"> -->
+
+  <table class="table table-responsive-md" >
+    <thead>
+    <tr>
+      <th>id</th>
+      <th>name</th>
+      <th>img</th>
+      <th>Delete product</th>
+    </tr>
+  </thead>
+    <!-- | filter: searchTerm -->
+    <tbody *ngFor="let product of products">
+    <tr *ngIf="product.name.includes(searchText)">
+      <td>{{product.id}}</td>
+      <td>{{product.name}}</td>
+      <td><img src="{{product.img}}" [alt]="product.name"></td>
+      <td><button (click) = 'remove(product.id)'>Xóa</button> </td>
+    </tr>
+  </tbody>
+  </table>
+</div>
+</div>
