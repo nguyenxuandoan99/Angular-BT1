@@ -9,3 +9,6 @@ li{
 a{
   list-style-position: none;
 }
+body{
+  background-image: linear-gradient(rgb(254, 255, 253), rgb(55, 55, 50));
+}

@@ -1,0 +1,19 @@
+<div class="container">
+<table class="table table-responsive-md" >
+  <thead>
+  <tr>
+    <th>id</th>
+    <th>name</th>
+    <th>img</th>
+    <th>Delete product</th>
+  </tr>
+</thead>
+  <tbody>
+  <tr *ngFor="let listproduct of products" >
+    <td>{{listproduct.id}}</td>
+    <td>{{listproduct.name}}</td>
+    <td><img src="{{listproduct.img}}" [alt]="listproduct.name"></td>
+    <td><button (click) = 'remove(listproduct.id)'>Xóa</button></td>
+  </tr>
+</tbody>
+</table>

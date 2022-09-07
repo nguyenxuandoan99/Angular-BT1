@@ -7,5 +7,6 @@ li{
   width: 100px;
 }
 a{
-  list-style-position: none;
+  color: rgb(226, 249, 15);
+  text-decoration: none;
 }
