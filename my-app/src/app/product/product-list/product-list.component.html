@@ -8,8 +8,8 @@
     <th>Delete product</th>
   </tr>
 </thead>
-  <tbody>
-  <tr *ngFor="let listproduct of products" >
+  <tbody *ngFor="let listproduct of products" >
+  <tr >
     <td>{{listproduct.id}}</td>
     <td>{{listproduct.name}}</td>
     <td><img src="{{listproduct.img}}" [alt]="listproduct.name"></td>

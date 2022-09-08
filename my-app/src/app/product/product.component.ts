@@ -11,6 +11,9 @@ import { Product } from './product.model';
 export class ProductComponent implements OnInit {
   constructor(private router: Router) { }
   searchText : string = "";
+
+  filterProduct : Product[] = [];
+
     products : Product[] = [
       {
         id : 1,
@@ -34,7 +37,6 @@ export class ProductComponent implements OnInit {
         img : 'https://rukminim1.flixcart.com/image/416/416/jrp8r680/cases-covers/back-cover/h/q/d/noble-nz-opo-f7-tran-01-original-imaf6ghkemmmmnmh.jpeg?q=70',
       },
     ]
-    filterProduct : Product[] = [];
     update(){
       this.router.navigate(['/update']);
     }
@@ -52,5 +54,4 @@ export class ProductComponent implements OnInit {
     }
   ngOnInit(): void {
   }
-
 }
