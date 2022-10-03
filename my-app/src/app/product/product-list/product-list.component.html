@@ -9,7 +9,7 @@
   </tr>
 </thead>
   <tbody *ngFor="let listproduct of products" >
-  <tr >
+  <tr *ngIf="">
     <td>{{listproduct.id}}</td>
     <td>{{listproduct.name}}</td>
     <td><img src="{{listproduct.img}}" [alt]="listproduct.name"></td>

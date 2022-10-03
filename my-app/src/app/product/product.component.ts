@@ -12,9 +12,26 @@ export class ProductComponent implements OnInit {
   constructor(private router: Router) { }
   searchText : string = "";
 
-  filterProduct : Product[] = [];
+  // filterProduct : Product[] = [];
 
-    products : Product[] = [
+  filterProduct: Product[] = [];
+    update(){
+      this.router.navigate(['/update']);
+    }
+    remove(productid : number) : void{
+      alert (" You want remove product" + productid);
+      const index = this.filterProduct.findIndex((product: { id: number; }) => product.id === productid);
+      if(index !== -1){
+        this.filterProduct.splice(index,1)
+      }
+    }
+    searchProduct(searchvalueproduct : string){
+      this.searchText = searchvalueproduct;
+      this.filterProduct = this.filterProduct.filter(product => product.name.includes(this.searchText))
+      console.log(this.searchText)
+    }
+  ngOnInit(): void {
+    this.filterProduct = [
       {
         id : 1,
         name : 'Iphone Xs',
@@ -37,21 +54,5 @@ export class ProductComponent implements OnInit {
         img : 'https://rukminim1.flixcart.com/image/416/416/jrp8r680/cases-covers/back-cover/h/q/d/noble-nz-opo-f7-tran-01-original-imaf6ghkemmmmnmh.jpeg?q=70',
       },
     ]
-    update(){
-      this.router.navigate(['/update']);
-    }
-    remove(productid : number) : void{
-      alert (" You want remove product" + productid);
-      const index = this.products.findIndex((product: { id: number; }) => product.id === productid);
-      if(index !== -1){
-        this.products.splice(index,1)
-      }
-    }
-    searchProduct(searchvalueproduct : string){
-      this.searchText = searchvalueproduct;
-      this.filterProduct = this.products.filter(product => product.name.includes(this.searchText))
-      console.log(this.searchText)
-    }
-  ngOnInit(): void {
   }
 }
